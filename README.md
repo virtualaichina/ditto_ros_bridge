@@ -1,3 +1,5 @@
+This document outlines the steps required to build, launch, and test the ditto_ros_bridge node, which acts as a bridge between the Eclipse Ditto platform and ROS 2.  This bridge allows you to seamlessly integrate data from Ditto "things" into your ROS 2 applications.  The instructions cover building the necessary ROS 2 packages, launching the bridge node, monitoring the published ROS 2 messages, and verifying that changes in Ditto are reflected in the ROS 2 environment.  By following these steps, you will be able to establish a connection between Ditto and ROS 2, enabling real-time data exchange and facilitating the development of ROS 2 applications that interact with Ditto-managed devices and data.
+
 1. Build (if you have updated /src):
 
 in the root directory (/ditto_ros_bridge) run:
