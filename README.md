@@ -18,26 +18,8 @@ or ros2 run ditto_ros_bridge bridge_node --ros-args -p debug:=true (for debuggin
 open a new terminal, in the root directory (/ditto_ros_bridge) run: source install/setup.bash 
 then run: ros2 topic echo /ditto/things
 
-4. Incure a change in Ditto and see the ros message update: curl -X PUT 'http://localhost:8080/api/2/things/org.eclipse.ditto.ttn.demo:device6' \
-  -u 'ditto:ditto' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "features": {
-      "sensor": {
-        "properties": {
-          "temperature": 2,
-          "humidity": 47
-        }
-      },
-      "location": {
-        "properties": {
-          "x": 1.5,
-          "y": 2.3,
-          "z": 0.0
-        }
-      }
-    }
-  }'
+4. Incure a change in Ditto and see the ros message update: 
+curl -X PUT 'http://localhost:8080/api/2/things/org.eclipse.ditto.ttn.demo:device9' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{ "features": { "sensor": { "properties": { "temperature": 2, "humidity": 47 } }, "location": { "properties": { "x": 1.5, "y": 2.3, "z": 0.0 } } } }'
 
 5. at the terminal running bridge_node, you should see:
 john@DESKTOP-0P475SS:~/ditto_ros_bridge$ ros2 run ditto_ros_bridge bridge_node --ros-args -p debug:=true
