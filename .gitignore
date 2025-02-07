@@ -1,53 +1,18 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# ROS specific
-devel/
-logs/
-build/
-bin/
-lib/
-msg_gen/
-srv_gen/
-*Action.msg
-*ActionFeedback.msg
-*ActionGoal.msg
-*ActionResult.msg
-*~
-.catkin_workspace
-
-# IDE specific
-.idea/
-.vscode/
+*.pyc
+*.iml
 *.swp
-*.swo
-
-# OS specific
+.project
+.pydevproject
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+.idea
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 
 *.Identifier
+
+# colcon/CMake output
+build
+install
+log
