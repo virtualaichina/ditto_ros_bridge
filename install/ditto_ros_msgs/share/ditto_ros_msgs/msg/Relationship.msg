@@ -1,0 +1,3 @@
+string parent_thing_id
+string child_thing_id
+string relationship_type

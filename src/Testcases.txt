@@ -1,0 +1,107 @@
+# Test Case 1: GPS Data
+
+curl -X PUT 'http://localhost:8080/api/2/things/org.demo:gps_sensor_1' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "features": {
+    "location": {
+      "properties": {
+        "latitude": 37.7749,  
+        "longitude": -122.4194, 
+        "altitude": 100.5       
+      }
+    }
+  }
+}'
+
+# Test Case 2: Temperature Sensor Data
+
+curl -X PUT 'http://localhost:8080/api/2/things/org.smartcity:energy_sensor_2' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "features": {
+    "energy": {
+      "properties": {
+        "consumption": 120.5
+      }
+    }
+  }
+}'
+
+# Test Case 3: Weather Station Data (Combined)
+
+curl -X PUT 'http://localhost:8080/api/2/things/org.demo:weather_station_3' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "features": {
+    "temperature": {
+      "properties": {
+        "temperature": 15.7,
+        "humidity": 70.1
+      }
+    },
+    "pressure": {
+      "properties": {
+        "pressure": 1015.2  
+      }
+    },
+    "air_quality": {
+      "properties": {
+        "air_quality": 92.4    
+      }
+    },
+    "location": {
+      "properties": {
+        "latitude": 40.7128,    
+        "longitude": -74.0060   
+      }
+    }
+  }
+}'
+
+
+# Test Case 4: Smart Building Sensor Data
+
+curl -X PUT 'http://localhost:8080/api/2/things/org.demo:smart_building_4' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "features": {
+    "light": {
+      "properties": {
+        "light_level": 750.3  
+      }
+    },
+    "co2": {
+      "properties": {
+        "co2_level": 550.9    
+      }
+    },
+    "tvoc": {
+      "properties": {
+        "tvoc_level": 300.2  
+      }
+    },
+    "motion": {
+      "properties": {
+        "motion_detected": true 
+      }
+    }
+  }
+}'
+
+# Test Case 5: Industrial Equipment Sensor
+
+curl -X PUT 'http://localhost:8080/api/2/things/org.demo:industrial_sensor_5' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "features": {
+    "vibration": {
+      "properties": {
+        "noise_level": 80.1    
+      }
+    },
+    "power": {
+      "properties": {
+        "power_consumption": 1200.5 
+      }
+    },
+    "maintenance": {
+      "properties": {
+        "uptime": 172800,       
+        "wear_level": 95.7      
+      }
+    }
+  }
+}'
+
+# ... (Add more test cases as needed for other device types)

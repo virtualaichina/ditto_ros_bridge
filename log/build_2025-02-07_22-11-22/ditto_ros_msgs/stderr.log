@@ -1,0 +1,8 @@
+[31mCMake Error at /opt/ros/rolling/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:192 (message):
+  rosidl_generate_interfaces() the passed dependency 'msg/Alert.msg' has not
+  been found before using find_package()
+Call Stack (most recent call first):
+  CMakeLists.txt:17 (rosidl_generate_interfaces)
+
+[0m
+gmake: *** [Makefile:1625: cmake_check_build_system] Error 1

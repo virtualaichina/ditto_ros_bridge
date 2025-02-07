@@ -1,0 +1,16 @@
+-- Found ament_cmake: 2.7.2 (/opt/ros/rolling/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rosidl_default_generators: 1.7.1 (/opt/ros/rolling/share/rosidl_default_generators/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rosidl_adapter: 4.9.3 (/opt/ros/rolling/share/rosidl_adapter/cmake)
+-- Found geometry_msgs: 5.4.2 (/opt/ros/rolling/share/geometry_msgs/cmake)
+[31mCMake Error at /opt/ros/rolling/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:192 (message):
+  rosidl_generate_interfaces() the passed dependency 'msg/Alert.msg' has not
+  been found before using find_package()
+Call Stack (most recent call first):
+  CMakeLists.txt:17 (rosidl_generate_interfaces)
+
+[0m
+-- Configuring incomplete, errors occurred!
+gmake: *** [Makefile:1625: cmake_check_build_system] Error 1

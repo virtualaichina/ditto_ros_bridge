@@ -1,0 +1,18 @@
+[0.019s] Invoking command in '/home/john/ditto_ros_bridge/build/ditto_ros_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/john/ditto_ros_bridge/install/ditto_ros_bridge:/home/john/ros2_ws/install/ditto_ros_bridge:/opt/ros/rolling /usr/bin/cmake --build /home/john/ditto_ros_bridge/build/ditto_ros_msgs -- -j4 -l4
+[0.062s] -- Found ament_cmake: 2.7.2 (/opt/ros/rolling/share/ament_cmake/cmake)
+[0.106s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.237s] -- Found rosidl_default_generators: 1.7.1 (/opt/ros/rolling/share/rosidl_default_generators/cmake)
+[0.242s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.443s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.492s] -- Found rosidl_adapter: 4.9.3 (/opt/ros/rolling/share/rosidl_adapter/cmake)
+[0.495s] -- Found geometry_msgs: 5.4.2 (/opt/ros/rolling/share/geometry_msgs/cmake)
+[0.769s] [31mCMake Error at /opt/ros/rolling/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:192 (message):
+[0.770s]   rosidl_generate_interfaces() the passed dependency 'msg/Alert.msg' has not
+[0.770s]   been found before using find_package()
+[0.770s] Call Stack (most recent call first):
+[0.770s]   CMakeLists.txt:17 (rosidl_generate_interfaces)
+[0.770s] 
+[0.771s] [0m
+[0.771s] -- Configuring incomplete, errors occurred!
+[0.779s] gmake: *** [Makefile:1625: cmake_check_build_system] Error 1
+[0.782s] Invoked command in '/home/john/ditto_ros_bridge/build/ditto_ros_msgs' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/john/ditto_ros_bridge/install/ditto_ros_bridge:/home/john/ros2_ws/install/ditto_ros_bridge:/opt/ros/rolling /usr/bin/cmake --build /home/john/ditto_ros_bridge/build/ditto_ros_msgs -- -j4 -l4

@@ -1,0 +1,8 @@
+msg/Alert.idl
+msg/Alert.msg
+msg/AssetMetadata.idl
+msg/AssetMetadata.msg
+msg/MachineStatus.idl
+msg/MachineStatus.msg
+msg/Relationship.idl
+msg/Relationship.msg

@@ -1,0 +1,22 @@
+running egg_info
+writing ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/PKG-INFO
+writing dependency_links to ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/dependency_links.txt
+writing entry points to ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/entry_points.txt
+writing requirements to ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/requires.txt
+writing top-level names to ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/top_level.txt
+reading manifest file '../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/SOURCES.txt'
+writing manifest file '../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/SOURCES.txt'
+running build
+running build_py
+copying ditto_ros_bridge/bridge_node.py -> /home/john/ditto_ros_bridge/build/ditto_ros_bridge/build/lib/ditto_ros_bridge
+running install
+running install_lib
+copying /home/john/ditto_ros_bridge/build/ditto_ros_bridge/build/lib/ditto_ros_bridge/bridge_node.py -> /home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages/ditto_ros_bridge
+byte-compiling /home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages/ditto_ros_bridge/bridge_node.py to bridge_node.cpython-312.pyc
+running install_data
+running install_egg_info
+removing '/home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages/ditto_ros_bridge-0.1.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info to /home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages/ditto_ros_bridge-0.1.0-py3.12.egg-info
+running install_scripts
+Installing bridge_node script to /home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/ditto_ros_bridge
+writing list of installed files to '/home/john/ditto_ros_bridge/build/ditto_ros_bridge/install.log'

@@ -1,0 +1,24 @@
+[1.611s] Invoking command in '/home/john/ditto_ros_bridge/src/ditto_ros_bridge': PYTHONPATH=/home/john/ditto_ros_bridge/build/ditto_ros_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ditto_ros_bridge build --build-base /home/john/ditto_ros_bridge/build/ditto_ros_bridge/build install --record /home/john/ditto_ros_bridge/build/ditto_ros_bridge/install.log --single-version-externally-managed install_data
+[2.027s] running egg_info
+[2.056s] writing ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/PKG-INFO
+[2.057s] writing dependency_links to ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/dependency_links.txt
+[2.057s] writing entry points to ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/entry_points.txt
+[2.058s] writing requirements to ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/requires.txt
+[2.058s] writing top-level names to ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/top_level.txt
+[2.123s] reading manifest file '../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/SOURCES.txt'
+[2.125s] writing manifest file '../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info/SOURCES.txt'
+[2.126s] running build
+[2.127s] running build_py
+[2.127s] copying ditto_ros_bridge/bridge_node.py -> /home/john/ditto_ros_bridge/build/ditto_ros_bridge/build/lib/ditto_ros_bridge
+[2.128s] running install
+[2.138s] running install_lib
+[2.171s] copying /home/john/ditto_ros_bridge/build/ditto_ros_bridge/build/lib/ditto_ros_bridge/bridge_node.py -> /home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages/ditto_ros_bridge
+[2.172s] byte-compiling /home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages/ditto_ros_bridge/bridge_node.py to bridge_node.cpython-312.pyc
+[2.175s] running install_data
+[2.176s] running install_egg_info
+[2.209s] removing '/home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages/ditto_ros_bridge-0.1.0-py3.12.egg-info' (and everything under it)
+[2.209s] Copying ../../build/ditto_ros_bridge/ditto_ros_bridge.egg-info to /home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages/ditto_ros_bridge-0.1.0-py3.12.egg-info
+[2.210s] running install_scripts
+[2.405s] Installing bridge_node script to /home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/ditto_ros_bridge
+[2.406s] writing list of installed files to '/home/john/ditto_ros_bridge/build/ditto_ros_bridge/install.log'
+[2.472s] Invoked command in '/home/john/ditto_ros_bridge/src/ditto_ros_bridge' returned '0': PYTHONPATH=/home/john/ditto_ros_bridge/build/ditto_ros_bridge/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/john/ditto_ros_bridge/install/ditto_ros_bridge/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ditto_ros_bridge build --build-base /home/john/ditto_ros_bridge/build/ditto_ros_bridge/build install --record /home/john/ditto_ros_bridge/build/ditto_ros_bridge/install.log --single-version-externally-managed install_data

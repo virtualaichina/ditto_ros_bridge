@@ -15,7 +15,10 @@ find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 
 set(msg_files
-  "msg/DittoThing.msg"
+  "msg/AssetMetadata.msg"
+  "msg/Alert.msg"
+  "msg/Relationship.msg"
+  "msg/MachineStatus.msg"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}

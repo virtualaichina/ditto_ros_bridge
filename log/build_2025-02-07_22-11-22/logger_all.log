@@ -1,0 +1,128 @@
+[0.234s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'ditto_ros_msgs']
+[0.234s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['ditto_ros_msgs'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7efe6553c2c0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7efe6570ff80>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7efe6570ff80>>)
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.293s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.294s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/john/ditto_ros_bridge'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.294s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.295s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.335s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_bridge) by extensions ['ignore', 'ignore_ament_install']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_bridge) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_bridge) by extension 'ignore_ament_install'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_bridge) by extensions ['colcon_pkg']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_bridge) by extension 'colcon_pkg'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_bridge) by extensions ['colcon_meta']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_bridge) by extension 'colcon_meta'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_bridge) by extensions ['ros']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_bridge) by extension 'ros'
+[0.341s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ditto_ros_bridge' with type 'ros.ament_python' and name 'ditto_ros_bridge'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_msgs) by extension 'ignore'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_msgs) by extension 'ignore_ament_install'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_msgs) by extensions ['colcon_pkg']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_msgs) by extension 'colcon_pkg'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_msgs) by extensions ['colcon_meta']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_msgs) by extension 'colcon_meta'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_msgs) by extensions ['ros']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/ditto_ros_msgs) by extension 'ros'
+[0.342s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ditto_ros_msgs' with type 'ros.ament_cmake' and name 'ditto_ros_msgs'
+[0.343s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.343s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.343s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.343s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.343s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.373s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'ditto_ros_bridge' in 'src/ditto_ros_bridge'
+[0.373s] Level 5:colcon.colcon_core.verb:set package 'ditto_ros_msgs' build argument 'cmake_args' from command line to 'None'
+[0.373s] Level 5:colcon.colcon_core.verb:set package 'ditto_ros_msgs' build argument 'cmake_target' from command line to 'None'
+[0.373s] Level 5:colcon.colcon_core.verb:set package 'ditto_ros_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'ditto_ros_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'ditto_ros_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'ditto_ros_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'ditto_ros_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'ditto_ros_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.374s] Level 5:colcon.colcon_core.verb:set package 'ditto_ros_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.374s] DEBUG:colcon.colcon_core.verb:Building package 'ditto_ros_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/john/ditto_ros_bridge/build/ditto_ros_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/john/ditto_ros_bridge/install/ditto_ros_msgs', 'merge_install': False, 'path': '/home/john/ditto_ros_bridge/src/ditto_ros_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.374s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.375s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.376s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/john/ditto_ros_bridge/src/ditto_ros_msgs' with build type 'ament_cmake'
+[0.376s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/john/ditto_ros_bridge/src/ditto_ros_msgs'
+[0.380s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.380s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.399s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/john/ditto_ros_bridge/build/ditto_ros_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/john/ditto_ros_bridge/install/ditto_ros_bridge:/home/john/ros2_ws/install/ditto_ros_bridge:/opt/ros/rolling /usr/bin/cmake --build /home/john/ditto_ros_bridge/build/ditto_ros_msgs -- -j4 -l4
+[1.159s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/john/ditto_ros_bridge/build/ditto_ros_msgs' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/john/ditto_ros_bridge/install/ditto_ros_bridge:/home/john/ros2_ws/install/ditto_ros_bridge:/opt/ros/rolling /usr/bin/cmake --build /home/john/ditto_ros_bridge/build/ditto_ros_msgs -- -j4 -l4
+[1.160s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ditto_ros_msgs)
+[1.164s] Level 1:colcon.colcon_core.environment:checking '/home/john/ditto_ros_bridge/install/ditto_ros_msgs' for CMake module files
+[1.165s] Level 1:colcon.colcon_core.environment:checking '/home/john/ditto_ros_bridge/install/ditto_ros_msgs' for CMake config files
+[1.165s] Level 1:colcon.colcon_core.shell:create_environment_hook('ditto_ros_msgs', 'cmake_prefix_path')
+[1.166s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/hook/cmake_prefix_path.dsv'
+[1.166s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/hook/cmake_prefix_path.sh'
+[1.167s] Level 1:colcon.colcon_core.environment:checking '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib'
+[1.168s] Level 1:colcon.colcon_core.shell:create_environment_hook('ditto_ros_msgs', 'ld_library_path_lib')
+[1.168s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/hook/ld_library_path_lib.dsv'
+[1.168s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/hook/ld_library_path_lib.sh'
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/bin'
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/pkgconfig/ditto_ros_msgs.pc'
+[1.172s] Level 1:colcon.colcon_core.environment:checking '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages'
+[1.173s] Level 1:colcon.colcon_core.shell:create_environment_hook('ditto_ros_msgs', 'pythonpath')
+[1.173s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/hook/pythonpath.dsv'
+[1.174s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/hook/pythonpath.sh'
+[1.174s] Level 1:colcon.colcon_core.environment:checking '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/bin'
+[1.175s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/package.dsv'
+[1.176s] INFO:colcon.colcon_core.shell:Creating package script '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/package.sh'
+[1.177s] INFO:colcon.colcon_core.shell:Creating package script '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/package.bash'
+[1.179s] INFO:colcon.colcon_core.shell:Creating package script '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/package.zsh'
+[1.180s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/colcon-core/packages/ditto_ros_msgs)
+[1.191s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.192s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.192s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[1.192s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.199s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.199s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.200s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.200s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.FileNotFound: Failed to connect to socket /run/user/1000/bus: No such file or directory
+[1.200s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.200s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/john/ditto_ros_bridge/install/local_setup.sh'
+[1.202s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/john/ditto_ros_bridge/install/_local_setup_util_sh.py'
+[1.205s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/john/ditto_ros_bridge/install/setup.sh'
+[1.207s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/john/ditto_ros_bridge/install/local_setup.bash'
+[1.208s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/john/ditto_ros_bridge/install/setup.bash'
+[1.210s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/john/ditto_ros_bridge/install/local_setup.zsh'
+[1.211s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/john/ditto_ros_bridge/install/setup.zsh'

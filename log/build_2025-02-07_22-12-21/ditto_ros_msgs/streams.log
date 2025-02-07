@@ -1,0 +1,236 @@
+[0.018s] Invoking command in '/home/john/ditto_ros_bridge/build/ditto_ros_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/john/ditto_ros_bridge/install/ditto_ros_bridge:/home/john/ros2_ws/install/ditto_ros_bridge:/opt/ros/rolling /usr/bin/cmake --build /home/john/ditto_ros_bridge/build/ditto_ros_msgs -- -j4 -l4
+[0.054s] -- Found ament_cmake: 2.7.2 (/opt/ros/rolling/share/ament_cmake/cmake)
+[0.232s] -- Found rosidl_default_generators: 1.7.1 (/opt/ros/rolling/share/rosidl_default_generators/cmake)
+[0.236s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.504s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.554s] -- Found rosidl_adapter: 4.9.3 (/opt/ros/rolling/share/rosidl_adapter/cmake)
+[0.557s] -- Found geometry_msgs: 5.4.2 (/opt/ros/rolling/share/geometry_msgs/cmake)
+[1.140s] -- Found ament_cmake_ros: 0.13.1 (/opt/ros/rolling/share/ament_cmake_ros/cmake)
+[1.436s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.799s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.206s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[2.281s] -- Configuring done (2.2s)
+[2.357s] -- Generating done (0.1s)
+[2.382s] -- Build files have been written to: /home/john/ditto_ros_bridge/build/ditto_ros_msgs
+[2.429s] [  1%] Built target ditto_ros_msgs__rosidl_generator_type_description
+[2.442s] [  1%] Built target ament_cmake_python_copy_ditto_ros_msgs
+[2.462s] [  3%] Built target ditto_ros_msgs__cpp
+[2.473s] [ 25%] Built target ditto_ros_msgs__rosidl_generator_c
+[2.511s] [ 34%] Built target ditto_ros_msgs__rosidl_typesupport_introspection_c
+[2.511s] [ 43%] Built target ditto_ros_msgs__rosidl_typesupport_c
+[2.551s] [ 48%] [32m[1mLinking CXX shared library libditto_ros_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[2.551s] [ 54%] Built target ditto_ros_msgs__rosidl_typesupport_fastrtps_cpp
+[2.560s] [ 56%] [32mBuilding CXX object CMakeFiles/ditto_ros_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ditto_ros_msgs/msg/alert__type_support.cpp.o[0m
+[2.631s] [ 65%] Built target ditto_ros_msgs__rosidl_typesupport_fastrtps_c
+[2.657s] [ 67%] [32mBuilding CXX object CMakeFiles/ditto_ros_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ditto_ros_msgs/msg/relationship__type_support.cpp.o[0m
+[2.931s] [ 75%] Built target ditto_ros_msgs__rosidl_typesupport_introspection_cpp
+[3.064s] running egg_info
+[3.121s] writing ditto_ros_msgs.egg-info/PKG-INFO
+[3.121s] writing dependency_links to ditto_ros_msgs.egg-info/dependency_links.txt
+[3.122s] writing top-level names to ditto_ros_msgs.egg-info/top_level.txt
+[3.279s] reading manifest file 'ditto_ros_msgs.egg-info/SOURCES.txt'
+[3.280s] writing manifest file 'ditto_ros_msgs.egg-info/SOURCES.txt'
+[3.355s] [ 75%] Built target ament_cmake_python_build_ditto_ros_msgs_egg
+[3.377s] [ 76%] [32m[1mLinking CXX shared library libditto_ros_msgs__rosidl_typesupport_cpp.so[0m
+[3.503s] [ 81%] Built target ditto_ros_msgs__rosidl_typesupport_cpp
+[3.528s] [ 81%] Built target ditto_ros_msgs
+[3.551s] [ 82%] Built target ditto_ros_msgs__py
+[3.585s] [ 90%] Built target ditto_ros_msgs__rosidl_generator_py
+[3.615s] [ 96%] Built target ditto_ros_msgs_s__rosidl_typesupport_introspection_c
+[3.616s] [ 96%] Built target ditto_ros_msgs_s__rosidl_typesupport_c
+[3.616s] [100%] Built target ditto_ros_msgs_s__rosidl_typesupport_fastrtps_c
+[3.634s] Invoked command in '/home/john/ditto_ros_bridge/build/ditto_ros_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/john/ditto_ros_bridge/install/ditto_ros_bridge:/home/john/ros2_ws/install/ditto_ros_bridge:/opt/ros/rolling /usr/bin/cmake --build /home/john/ditto_ros_bridge/build/ditto_ros_msgs -- -j4 -l4
+[3.647s] Invoking command in '/home/john/ditto_ros_bridge/build/ditto_ros_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/john/ditto_ros_bridge/install/ditto_ros_bridge:/home/john/ros2_ws/install/ditto_ros_bridge:/opt/ros/rolling /usr/bin/cmake --install /home/john/ditto_ros_bridge/build/ditto_ros_msgs
+[3.662s] -- Install configuration: ""
+[3.662s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ament_index/resource_index/rosidl_interfaces/ditto_ros_msgs
+[3.663s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/AssetMetadata.json
+[3.663s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/Alert.json
+[3.664s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/Relationship.json
+[3.664s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/MachineStatus.json
+[3.665s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs
+[3.665s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg
+[3.665s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail
+[3.666s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__type_support.c
+[3.666s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__type_support.c
+[3.666s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__type_support.c
+[3.666s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__type_support.c
+[3.667s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__type_support.h
+[3.667s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__functions.c
+[3.667s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__functions.h
+[3.668s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__type_support.h
+[3.668s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__functions.c
+[3.668s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__functions.h
+[3.669s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__functions.c
+[3.669s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__functions.c
+[3.669s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__description.c
+[3.669s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__type_support.h
+[3.669s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__description.c
+[3.670s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__type_support.h
+[3.670s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__functions.h
+[3.671s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__functions.h
+[3.671s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__struct.h
+[3.671s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__description.c
+[3.671s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__description.c
+[3.671s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__struct.h
+[3.672s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__struct.h
+[3.672s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__struct.h
+[3.672s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/machine_status.h
+[3.672s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/rosidl_generator_c__visibility_control.h
+[3.672s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/relationship.h
+[3.672s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/asset_metadata.h
+[3.673s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/alert.h
+[3.673s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/environment/library_path.sh
+[3.674s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/environment/library_path.dsv
+[3.674s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_generator_c.so
+[3.674s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs
+[3.674s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg
+[3.675s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail
+[3.675s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__rosidl_typesupport_fastrtps_c.h
+[3.675s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__rosidl_typesupport_fastrtps_c.h
+[3.676s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__rosidl_typesupport_fastrtps_c.h
+[3.676s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__rosidl_typesupport_fastrtps_c.h
+[3.676s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.676s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_typesupport_fastrtps_c.so
+[3.677s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs
+[3.677s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg
+[3.677s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail
+[3.678s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__type_support.c
+[3.678s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__type_support.c
+[3.678s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__type_support.c
+[3.678s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__type_support.c
+[3.678s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__rosidl_typesupport_introspection_c.h
+[3.679s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__rosidl_typesupport_introspection_c.h
+[3.679s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__rosidl_typesupport_introspection_c.h
+[3.679s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__rosidl_typesupport_introspection_c.h
+[3.679s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.679s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_typesupport_introspection_c.so
+[3.679s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_typesupport_c.so
+[3.679s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs
+[3.680s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg
+[3.680s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail
+[3.680s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__type_support.hpp
+[3.680s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__builder.hpp
+[3.680s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__traits.hpp
+[3.680s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__struct.hpp
+[3.680s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__type_support.hpp
+[3.681s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__builder.hpp
+[3.681s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__traits.hpp
+[3.681s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__struct.hpp
+[3.681s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__type_support.hpp
+[3.681s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__struct.hpp
+[3.681s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__builder.hpp
+[3.682s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__traits.hpp
+[3.682s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__builder.hpp
+[3.682s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__struct.hpp
+[3.682s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__type_support.hpp
+[3.682s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__traits.hpp
+[3.682s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/machine_status.hpp
+[3.682s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/asset_metadata.hpp
+[3.683s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/relationship.hpp
+[3.683s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.683s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/alert.hpp
+[3.683s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs
+[3.683s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg
+[3.684s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail
+[3.684s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/dds_fastrtps
+[3.684s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__rosidl_typesupport_fastrtps_cpp.hpp
+[3.684s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__rosidl_typesupport_fastrtps_cpp.hpp
+[3.684s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__rosidl_typesupport_fastrtps_cpp.hpp
+[3.684s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__rosidl_typesupport_fastrtps_cpp.hpp
+[3.684s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.685s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_typesupport_fastrtps_cpp.so
+[3.686s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs
+[3.686s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg
+[3.686s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail
+[3.686s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__rosidl_typesupport_introspection_cpp.hpp
+[3.687s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__type_support.cpp
+[3.687s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__type_support.cpp
+[3.687s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/asset_metadata__rosidl_typesupport_introspection_cpp.hpp
+[3.687s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__type_support.cpp
+[3.687s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/relationship__type_support.cpp
+[3.687s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/alert__rosidl_typesupport_introspection_cpp.hpp
+[3.687s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/include/ditto_ros_msgs/ditto_ros_msgs/msg/detail/machine_status__rosidl_typesupport_introspection_cpp.hpp
+[3.688s] -- Installing: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_typesupport_introspection_cpp.so
+[3.688s] -- Set non-toolchain portion of runtime path of "/home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[3.688s] -- Installing: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_typesupport_cpp.so
+[3.688s] -- Set non-toolchain portion of runtime path of "/home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_typesupport_cpp.so" to ""
+[3.688s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/environment/pythonpath.sh
+[3.689s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/environment/pythonpath.dsv
+[3.689s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs-0.1.0-py3.12.egg-info
+[3.689s] -- Installing: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs-0.1.0-py3.12.egg-info/top_level.txt
+[3.689s] -- Installing: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs-0.1.0-py3.12.egg-info/PKG-INFO
+[3.689s] -- Installing: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs-0.1.0-py3.12.egg-info/SOURCES.txt
+[3.689s] -- Installing: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs-0.1.0-py3.12.egg-info/dependency_links.txt
+[3.689s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs
+[3.690s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/_ditto_ros_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[3.690s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/_ditto_ros_msgs_s.ep.rosidl_typesupport_c.c
+[3.690s] -- Installing: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/__init__.py
+[3.690s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/ditto_ros_msgs_s__rosidl_typesupport_c.so
+[3.690s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/ditto_ros_msgs_s__rosidl_typesupport_fastrtps_c.so
+[3.690s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg
+[3.690s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg/_alert_s.c
+[3.690s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg/_relationship.py
+[3.690s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg/__init__.py
+[3.690s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg/_asset_metadata.py
+[3.691s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg/_asset_metadata_s.c
+[3.691s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg/_machine_status_s.c
+[3.691s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg/_machine_status.py
+[3.691s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg/_alert.py
+[3.691s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg/_relationship_s.c
+[3.691s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/_ditto_ros_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.691s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/ditto_ros_msgs_s__rosidl_typesupport_introspection_c.so
+[3.742s] Listing '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs'...
+[3.742s] Compiling '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/__init__.py'...
+[3.742s] Listing '/home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/msg'...
+[3.752s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/ditto_ros_msgs_s__rosidl_typesupport_fastrtps_c.so
+[3.753s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/ditto_ros_msgs_s__rosidl_typesupport_introspection_c.so
+[3.753s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/python3.12/site-packages/ditto_ros_msgs/ditto_ros_msgs_s__rosidl_typesupport_c.so
+[3.754s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/lib/libditto_ros_msgs__rosidl_generator_py.so
+[3.754s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/AssetMetadata.idl
+[3.755s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/Alert.idl
+[3.755s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/Relationship.idl
+[3.756s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/MachineStatus.idl
+[3.756s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/AssetMetadata.msg
+[3.757s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/Alert.msg
+[3.757s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/Relationship.msg
+[3.758s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/msg/MachineStatus.msg
+[3.758s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ament_index/resource_index/package_run_dependencies/ditto_ros_msgs
+[3.758s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ament_index/resource_index/parent_prefix_path/ditto_ros_msgs
+[3.758s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/environment/ament_prefix_path.sh
+[3.759s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/environment/ament_prefix_path.dsv
+[3.759s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/environment/path.sh
+[3.760s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/environment/path.dsv
+[3.760s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/local_setup.bash
+[3.760s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/local_setup.sh
+[3.761s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/local_setup.zsh
+[3.761s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/local_setup.dsv
+[3.761s] -- Installing: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/package.dsv
+[3.762s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ament_index/resource_index/packages/ditto_ros_msgs
+[3.762s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/export_ditto_ros_msgs__rosidl_generator_cExport.cmake
+[3.762s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/export_ditto_ros_msgs__rosidl_generator_cExport-noconfig.cmake
+[3.762s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/export_ditto_ros_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[3.762s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/export_ditto_ros_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.762s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgs__rosidl_typesupport_introspection_cExport.cmake
+[3.763s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.763s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgs__rosidl_typesupport_cExport.cmake
+[3.763s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[3.763s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/export_ditto_ros_msgs__rosidl_generator_cppExport.cmake
+[3.764s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/export_ditto_ros_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.764s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/export_ditto_ros_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.764s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[3.764s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.765s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgs__rosidl_typesupport_cppExport.cmake
+[3.765s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[3.765s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/export_ditto_ros_msgs__rosidl_generator_pyExport.cmake
+[3.765s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/export_ditto_ros_msgs__rosidl_generator_pyExport-noconfig.cmake
+[3.766s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/rosidl_cmake-extras.cmake
+[3.766s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.766s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.766s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[3.767s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[3.767s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.767s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.768s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgsConfig.cmake
+[3.768s] -- Up-to-date: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/cmake/ditto_ros_msgsConfig-version.cmake
+[3.768s] -- Installing: /home/john/ditto_ros_bridge/install/ditto_ros_msgs/share/ditto_ros_msgs/package.xml
+[3.770s] Invoked command in '/home/john/ditto_ros_bridge/build/ditto_ros_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/john/ditto_ros_bridge/install/ditto_ros_bridge:/home/john/ros2_ws/install/ditto_ros_bridge:/opt/ros/rolling /usr/bin/cmake --install /home/john/ditto_ros_bridge/build/ditto_ros_msgs
