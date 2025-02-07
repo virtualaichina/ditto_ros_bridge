@@ -2,6 +2,15 @@ This repo outlines the steps required to build, launch, and test the ditto_ros_b
 
 This bridge node subscribes to SSE events from Ditto and publishes them as ROS 2 messages. It listens to /things?namespaces={namespaces}&fields=thingId,attributes,features", where namespaces are "org.smartcity" and "com.manufacturing" in this setting.
 
+It implements the following features:
+
+1. Subscribes to Ditto's SSE API for real-time updates on digital twins.
+2. Processes various types of data from Ditto Things, including attributes, features, and relationships.
+3. Maps Ditto data to appropriate ROS messages and publishes them to specific topics.
+4. Implements error handling and reconnection logic for robustness.
+
+In order to run the bridge node, follow these steps:
+
 1. Build (if you have updated /src):
 
 in the root directory (/ditto_ros_bridge) run:
@@ -41,3 +50,4 @@ location:
   x: 8.261719
   y: 44.673856
   z: 144.0
+
