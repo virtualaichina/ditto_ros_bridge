@@ -5,6 +5,7 @@ import aiohttp
 import asyncio
 import json
 import base64
+import re
 from threading import Thread
 from ditto_ros_msgs.msg import AssetMetadata, Alert, Relationship, MachineStatus, TrafficData, WaterManagement, EnergyConsumption, ProductionLine, Temperature, Humidity, Pressure, Imu, EnergyConsumption, CropData, WaterManagement, TrafficData, EnvironmentalData, TrafficLight
 from geometry_msgs.msg import Point
@@ -14,24 +15,7 @@ class DittoROS2Bridge(Node):
     def __init__(self):
         super().__init__('ditto_ros_bridge')
         
-        # ROS 2 Publishers
-        self.asset_metadata_pub = self.create_publisher(AssetMetadata, '/asset/metadata', 10)
-        self.location_pub = self.create_publisher(Point, '/asset/location', 10)
-        self.temperature_pub = self.create_publisher(Temperature, '/sensor/temperature', 10)
-        self.humidity_pub = self.create_publisher(Humidity, '/sensor/humidity', 10)
-        self.pressure_pub = self.create_publisher(Pressure, '/sensor/pressure', 10)
-        self.imu_pub = self.create_publisher(Imu, '/sensor/imu', 10)
-        self.alert_pub = self.create_publisher(Alert, '/alerts', 10)
-        self.relationship_pub = self.create_publisher(Relationship, '/asset/relationships', 10)
-        self.machine_status_pub = self.create_publisher(MachineStatus, '/machine/status', 10)
-        self.env_data_pub = self.create_publisher(EnvironmentalData, '/environment/data', 10)
-        self.traffic_data_pub = self.create_publisher(TrafficData, '/city/traffic', 10)
-        self.traffic_light_pub = self.create_publisher(TrafficLight, '/traffic/traffic_light', 10)
-        self.crop_data_pub = self.create_publisher(CropData, '/agriculture/crop', 10)
-        self.water_mgmt_pub = self.create_publisher(WaterManagement, '/city/water', 10)
-        self.energy_consumption_pub = self.create_publisher(EnergyConsumption, '/energy/consumption', 10)
-        self.production_line_pub = self.create_publisher(ProductionLine, '/manufacturing/production', 10)
-
+        self._topic_publishers = {}
 
         # Parameters
         self.declare_parameter('ditto_host', 'localhost')
@@ -54,6 +38,30 @@ class DittoROS2Bridge(Node):
         self.sse_thread = Thread(target=self.run_sse)
         self.sse_thread.daemon = True
         self.sse_thread.start()
+
+    def sanitize_topic_name(self, name: str) -> str:
+        """Convert Ditto thingId to a valid ROS topic name."""
+        # First, replace colons and dots with underscores
+        name = name.replace(':', '_').replace('.', '_')
+        
+        # If the name doesn't start with '/', add it
+        if not name.startswith('/'):
+            name = '/' + name
+            
+        # Replace any remaining invalid characters with underscores
+        # Only allow alphanumerics, '_', '~', '{', '}', and '/'
+        return re.sub(r'[^0-9a-zA-Z_/~{}]', '_', name)
+
+    def get_or_create_publisher(self, msg_type, topic_name: str):
+        """Get or create a publisher for a specific topic."""
+        # Sanitize the topic name
+        topic_name = self.sanitize_topic_name(topic_name)
+        
+        if topic_name not in self._topic_publishers:  # Update reference
+            self._topic_publishers[topic_name] = self.create_publisher(msg_type, topic_name, 10)
+            self.get_logger().info(f"Created new publisher for topic: {topic_name}")
+        
+        return self._topic_publishers[topic_name]  # Update reference
 
     def run_sse(self):
         loop = asyncio.new_event_loop()
@@ -130,16 +138,17 @@ class DittoROS2Bridge(Node):
                 point_msg.x = float(location.get('longitude', 0.0))
                 point_msg.y = float(location.get('latitude', 0.0))
                 point_msg.z = float(location.get('elevation', 0.0))
-                self.location_pub.publish(point_msg)
 
                 metadata_msg = AssetMetadata()
                 metadata_msg.asset_id = thing_id
                 metadata_msg.type = attributes.get('asset_type', '')
                 metadata_msg.location = point_msg
-                self.asset_metadata_pub.publish(metadata_msg)
+
+                metadata_pub = self.get_or_create_publisher(AssetMetadata, f"{thing_id}/metadata")
+                metadata_pub.publish(metadata_msg)
 
                 self.get_logger().info(
-                f"Published thing_id: {thing_id} : point_msg: {point_msg} : metadata_msg: {metadata_msg}"
+                f"Published thing_id: {thing_id} : metadata_msg: {metadata_msg}"
                 )
 
             # Process features (telemetry)
@@ -147,7 +156,8 @@ class DittoROS2Bridge(Node):
                 temp = features['temperature'].get('properties', {})
                 temp_msg = Temperature()
                 temp_msg.temperature = float(temp.get('value', 0.0))
-                self.temperature_pub.publish(temp_msg)
+                pub = self.get_or_create_publisher(Temperature, f"{thing_id}/sensor/temperature")
+                pub.publish(temp_msg)
 
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : temp_msg: {temp_msg}"
@@ -158,7 +168,8 @@ class DittoROS2Bridge(Node):
                 traffic_light_msg = TrafficLight()
                 traffic_light_msg.current_state = traffic_light.get('current_state', 'unknown')
                 traffic_light_msg.time_to_change = float(traffic_light.get('time_to_change', 0.0))
-                self.traffic_light_pub.publish(traffic_light_msg)
+                pub = self.get_or_create_publisher(TrafficLight, f"{thing_id}/traffic_light_status")
+                pub.publish(traffic_light_msg)
 
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : traffic_light_msg: {traffic_light_msg}"
@@ -168,7 +179,8 @@ class DittoROS2Bridge(Node):
                 hum = features['humidity'].get('properties', {})
                 hum_msg = Humidity()
                 hum_msg.humidity = float(hum.get('value', 0.0))
-                self.humidity_pub.publish(hum_msg)
+                pub = self.get_or_create_publisher(Humidity, f"{thing_id}/sensor/humidity")
+                pub.publish(hum_msg)
 
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : hum_msg: {hum_msg}"
@@ -178,7 +190,8 @@ class DittoROS2Bridge(Node):
                 pre = features['pressure'].get('properties', {})
                 pre_msg = Pressure()
                 pre_msg.pressure = float(pre.get('value', 0.0))
-                self.pressure_pub.publish(pre_msg)
+                pub = self.get_or_create_publisher(Pressure, f"{thing_id}/sensor/pressure")
+                pub.publish(pre_msg)
 
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : pre_msg: {pre_msg}"
@@ -193,7 +206,8 @@ class DittoROS2Bridge(Node):
                 imu_msg.angular_velocity_x = float(imu.get('gyro_x', 0.0))
                 imu_msg.angular_velocity_y = float(imu.get('gyro_y', 0.0))
                 imu_msg.angular_velocity_z = float(imu.get('gyro_z', 0.0))
-                self.imu_pub.publish(imu_msg)
+                pub = self.get_or_create_publisher(Imu, f"{thing_id}/sensor/imu")
+                pub.publish(imu_msg)
                 
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : imu_msg: {imu_msg}"
@@ -206,7 +220,8 @@ class DittoROS2Bridge(Node):
                     alert_msg = Alert()
                     alert_msg.message = f"{thing_id}:{message.get('type', 'unknown')}"
                     alert_msg.severity = int(message.get('severity', 0))
-                    self.alert_pub.publish(alert_msg)
+                    pub = self.get_or_create_publisher(Alert, f"{thing_id}/alerts")
+                    pub.publish(alert_msg)
                     self.get_logger().info(
                     f"Published thing_id: {thing_id} : alert_msg: {alert_msg}"
                     )
@@ -219,7 +234,8 @@ class DittoROS2Bridge(Node):
                     rel_msg.child_thing_id = thing_id
                     rel_msg.parent_thing_id = rel_data.get('target', '')
                     rel_msg.relationship_type = rel_type
-                    self.relationship_pub.publish(rel_msg)
+                    pub = self.get_or_create_publisher(Relationship, f"{thing_id}/relationships")
+                    pub.publish(rel_msg)
                     self.get_logger().info(
                     f"Published thing_id: {thing_id} : rel_msg: {rel_msg}"
                     )
@@ -232,7 +248,8 @@ class DittoROS2Bridge(Node):
                 status_msg.status = status.get('value', '')
                 status_msg.uptime = float(status.get('uptime', 0.0))
                 status_msg.efficiency = float(status.get('efficiency', 0.0))
-                self.machine_status_pub.publish(status_msg)
+                pub = self.get_or_create_publisher(MachineStatus, f"{thing_id}/status")
+                pub.publish(status_msg)
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : status_msg: {status_msg}"
                 )
@@ -244,7 +261,8 @@ class DittoROS2Bridge(Node):
                 env_msg.noise_level = float(env.get('noise', 0.0))
                 env_msg.light_intensity = float(env.get('light', 0.0))
                 env_msg.co2_level = float(env.get('co2', 0.0))
-                self.env_data_pub.publish(env_msg)
+                pub = self.get_or_create_publisher(EnvironmentalData, f"{thing_id}/sensor/environment")
+                pub.publish(env_msg)
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : env_msg: {env_msg}"
                 )
@@ -256,7 +274,8 @@ class DittoROS2Bridge(Node):
                 traffic_msg.vehicle_count = int(traffic.get('count', 0))
                 traffic_msg.average_speed = float(traffic.get('avg_speed', 0.0))
                 traffic_msg.congestion_level = int(traffic.get('congestion', 0))
-                self.traffic_data_pub.publish(traffic_msg)
+                pub = self.get_or_create_publisher(TrafficData, f"{thing_id}/traffic")
+                pub.publish(traffic_msg)
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : traffic_msg: {traffic_msg}"
                 )
@@ -269,7 +288,8 @@ class DittoROS2Bridge(Node):
                 crop_msg.soil_moisture = float(crop.get('moisture', 0.0))
                 crop_msg.soil_ph = float(crop.get('ph', 0.0))
                 crop_msg.growth_stage = float(crop.get('growth', 0.0))
-                self.crop_data_pub.publish(crop_msg)
+                pub = self.get_or_create_publisher(CropData, f"{thing_id}/sensor/crop")
+                pub.publish(crop_msg)
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : crop_msg: {crop_msg}"
                 )
@@ -282,7 +302,8 @@ class DittoROS2Bridge(Node):
                 water_msg.flow_rate = float(water.get('flow', 0.0))
                 water_msg.turbidity = float(water.get('turbidity', 0.0))
                 water_msg.valve_status = bool(water.get('valve_open', False))
-                self.water_mgmt_pub.publish(water_msg)
+                pub = self.get_or_create_publisher(WaterManagement, f"{thing_id}/sensor/water")
+                pub.publish(water_msg)
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : water_msg: {water_msg}"
                 )
@@ -294,7 +315,8 @@ class DittoROS2Bridge(Node):
                 energy_msg.total_consumption = float(energy.get('total', 0.0))
                 energy_msg.renewable_percentage = float(energy.get('renewable', 0.0))
                 energy_msg.grid_load = float(energy.get('grid_load', 0.0))
-                self.energy_consumption_pub.publish(energy_msg)
+                pub = self.get_or_create_publisher(EnergyConsumption, f"{thing_id}/energy")
+                pub.publish(energy_msg)
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : energy_msg: {energy_msg}"
                 )
@@ -307,7 +329,8 @@ class DittoROS2Bridge(Node):
                 prod_msg.units_produced = int(prod.get('units', 0))
                 prod_msg.defect_count = int(prod.get('defects', 0))
                 prod_msg.overall_equipment_effectiveness = float(prod.get('oee', 0.0))
-                self.production_line_pub.publish(prod_msg)
+                pub = self.get_or_create_publisher(ProductionLine, f"{thing_id}/production")
+                pub.publish(prod_msg)
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : prod_msg: {prod_msg}"
                 )
