@@ -6,9 +6,8 @@ import asyncio
 import json
 import base64
 from threading import Thread
-from ditto_ros_msgs.msg import AssetMetadata, Alert, Relationship, MachineStatus
+from ditto_ros_msgs.msg import AssetMetadata, Alert, Relationship, MachineStatus, TrafficData, WaterManagement, EnergyConsumption, ProductionLine, Temperature, Humidity, Pressure, Imu, EnergyConsumption, CropData, WaterManagement, TrafficData, EnvironmentalData, TrafficLight
 from geometry_msgs.msg import Point
-from sensor_msgs.msg import Temperature, Imu
 from std_msgs.msg import Float64, String
 
 class DittoROS2Bridge(Node):
@@ -19,18 +18,27 @@ class DittoROS2Bridge(Node):
         self.asset_metadata_pub = self.create_publisher(AssetMetadata, '/asset/metadata', 10)
         self.location_pub = self.create_publisher(Point, '/asset/location', 10)
         self.temperature_pub = self.create_publisher(Temperature, '/sensor/temperature', 10)
+        self.humidity_pub = self.create_publisher(Humidity, '/sensor/humidity', 10)
+        self.pressure_pub = self.create_publisher(Pressure, '/sensor/pressure', 10)
         self.imu_pub = self.create_publisher(Imu, '/sensor/imu', 10)
-        self.energy_pub = self.create_publisher(Float64, '/sensor/energy', 10)
         self.alert_pub = self.create_publisher(Alert, '/alerts', 10)
         self.relationship_pub = self.create_publisher(Relationship, '/asset/relationships', 10)
         self.machine_status_pub = self.create_publisher(MachineStatus, '/machine/status', 10)
-        
+        self.env_data_pub = self.create_publisher(EnvironmentalData, '/environment/data', 10)
+        self.traffic_data_pub = self.create_publisher(TrafficData, '/city/traffic', 10)
+        self.traffic_light_pub = self.create_publisher(TrafficLight, '/traffic/traffic_light', 10)
+        self.crop_data_pub = self.create_publisher(CropData, '/agriculture/crop', 10)
+        self.water_mgmt_pub = self.create_publisher(WaterManagement, '/city/water', 10)
+        self.energy_consumption_pub = self.create_publisher(EnergyConsumption, '/energy/consumption', 10)
+        self.production_line_pub = self.create_publisher(ProductionLine, '/manufacturing/production', 10)
+
+
         # Parameters
         self.declare_parameter('ditto_host', 'localhost')
         self.declare_parameter('ditto_port', 8080)
         self.declare_parameter('ditto_username', 'ditto')
         self.declare_parameter('ditto_password', 'ditto')
-        self.declare_parameter('ditto_namespaces', 'org.smartcity,com.manufacturing')
+        self.declare_parameter('ditto_namespaces', 'org.smartcity,org.agriculture,com.manufacturing')
         self.declare_parameter('debug', True)
         
         self.host = self.get_parameter('ditto_host').value
@@ -133,6 +141,7 @@ class DittoROS2Bridge(Node):
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : point_msg: {point_msg} : metadata_msg: {metadata_msg}"
                 )
+
             # Process features (telemetry)
             if 'temperature' in features:
                 temp = features['temperature'].get('properties', {})
@@ -143,32 +152,56 @@ class DittoROS2Bridge(Node):
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : temp_msg: {temp_msg}"
                 )
+
+            if 'traffic_light_status' in features:
+                traffic_light = features['traffic_light_status'].get('properties', {})
+                traffic_light_msg = TrafficLight()
+                traffic_light_msg.current_state = traffic_light.get('current_state', 'unknown')
+                traffic_light_msg.time_to_change = float(traffic_light.get('time_to_change', 0.0))
+                self.traffic_light_pub.publish(traffic_light_msg)
+
+                self.get_logger().info(
+                f"Published thing_id: {thing_id} : traffic_light_msg: {traffic_light_msg}"
+                )
+
+            if 'humidity' in features:
+                hum = features['humidity'].get('properties', {})
+                hum_msg = Humidity()
+                hum_msg.humidity = float(hum.get('value', 0.0))
+                self.humidity_pub.publish(hum_msg)
+
+                self.get_logger().info(
+                f"Published thing_id: {thing_id} : hum_msg: {hum_msg}"
+                )
+                
+            if 'pressure' in features:
+                pre = features['pressure'].get('properties', {})
+                pre_msg = Pressure()
+                pre_msg.pressure = float(pre.get('value', 0.0))
+                self.pressure_pub.publish(pre_msg)
+
+                self.get_logger().info(
+                f"Published thing_id: {thing_id} : pre_msg: {pre_msg}"
+                )
+
             if 'imu' in features:
                 imu = features['imu'].get('properties', {})
                 imu_msg = Imu()
-                imu_msg.linear_acceleration.x = float(imu.get('accel_x', 0.0))
-                imu_msg.linear_acceleration.y = float(imu.get('accel_y', 0.0))
-                imu_msg.linear_acceleration.z = float(imu.get('accel_z', 0.0))
-                imu_msg.angular_velocity.x = float(imu.get('gyro_x', 0.0))
-                imu_msg.angular_velocity.y = float(imu.get('gyro_y', 0.0))
-                imu_msg.angular_velocity.z = float(imu.get('gyro_z', 0.0))
+                imu_msg.linear_acceleration_x = float(imu.get('accel_x', 0.0))
+                imu_msg.linear_acceleration_y = float(imu.get('accel_y', 0.0))
+                imu_msg.linear_acceleration_z = float(imu.get('accel_z', 0.0))
+                imu_msg.angular_velocity_x = float(imu.get('gyro_x', 0.0))
+                imu_msg.angular_velocity_y = float(imu.get('gyro_y', 0.0))
+                imu_msg.angular_velocity_z = float(imu.get('gyro_z', 0.0))
                 self.imu_pub.publish(imu_msg)
                 
                 self.get_logger().info(
                 f"Published thing_id: {thing_id} : imu_msg: {imu_msg}"
                 )
-            if 'energy' in features:
-                energy = features['energy'].get('properties', {})
-                energy_msg = Float64()
-                energy_msg.consumption = float(energy.get('consumption', 0.0))
-                self.energy_pub.publish(energy_msg)
 
-                self.get_logger().info(
-                f"Published thing_id: {thing_id} : energy_msg: {energy_msg}"
-                )
             # Process live messages (alerts)
-            if 'inbox' in features:
-                inbox = features['inbox'].get('properties', {})
+            if 'alerts' in features:
+                inbox = features['alerts'].get('properties', {})
                 for message_id, message in inbox.items():
                     alert_msg = Alert()
                     alert_msg.message = f"{thing_id}:{message.get('type', 'unknown')}"
@@ -177,18 +210,20 @@ class DittoROS2Bridge(Node):
                     self.get_logger().info(
                     f"Published thing_id: {thing_id} : alert_msg: {alert_msg}"
                     )
+
             # Process relationships
             if 'relationships' in features:
                 relationships = features['relationships'].get('properties', {})
                 for rel_type, rel_data in relationships.items():
                     rel_msg = Relationship()
-                    rel_msg.parent_thing_id = thing_id
-                    rel_msg.child_thing_id = rel_data.get('target', '')
+                    rel_msg.child_thing_id = thing_id
+                    rel_msg.parent_thing_id = rel_data.get('target', '')
                     rel_msg.relationship_type = rel_type
                     self.relationship_pub.publish(rel_msg)
                     self.get_logger().info(
                     f"Published thing_id: {thing_id} : rel_msg: {rel_msg}"
                     )
+
             # Process machine status (for manufacturing)
             if 'status' in features:
                 status = features['status'].get('properties', {})
@@ -202,6 +237,81 @@ class DittoROS2Bridge(Node):
                 f"Published thing_id: {thing_id} : status_msg: {status_msg}"
                 )
             
+            if 'environment' in features:
+                env = features['environment'].get('properties', {})
+                env_msg = EnvironmentalData()
+                env_msg.air_quality_index = float(env.get('aqi', 0.0))
+                env_msg.noise_level = float(env.get('noise', 0.0))
+                env_msg.light_intensity = float(env.get('light', 0.0))
+                env_msg.co2_level = float(env.get('co2', 0.0))
+                self.env_data_pub.publish(env_msg)
+                self.get_logger().info(
+                f"Published thing_id: {thing_id} : env_msg: {env_msg}"
+                )
+
+            # Process traffic data
+            if 'traffic' in features:
+                traffic = features['traffic'].get('properties', {})
+                traffic_msg = TrafficData()
+                traffic_msg.vehicle_count = int(traffic.get('count', 0))
+                traffic_msg.average_speed = float(traffic.get('avg_speed', 0.0))
+                traffic_msg.congestion_level = int(traffic.get('congestion', 0))
+                self.traffic_data_pub.publish(traffic_msg)
+                self.get_logger().info(
+                f"Published thing_id: {thing_id} : traffic_msg: {traffic_msg}"
+                )
+
+            # Process crop data
+            if 'crop' in features:
+                crop = features['crop'].get('properties', {})
+                crop_msg = CropData()
+                crop_msg.crop_type = crop.get('type', '')
+                crop_msg.soil_moisture = float(crop.get('moisture', 0.0))
+                crop_msg.soil_ph = float(crop.get('ph', 0.0))
+                crop_msg.growth_stage = float(crop.get('growth', 0.0))
+                self.crop_data_pub.publish(crop_msg)
+                self.get_logger().info(
+                f"Published thing_id: {thing_id} : crop_msg: {crop_msg}"
+                )
+
+            # Process water management data
+            if 'water' in features:
+                water = features['water'].get('properties', {})
+                water_msg = WaterManagement()
+                water_msg.water_level = float(water.get('level', 0.0))
+                water_msg.flow_rate = float(water.get('flow', 0.0))
+                water_msg.turbidity = float(water.get('turbidity', 0.0))
+                water_msg.valve_status = bool(water.get('valve_open', False))
+                self.water_mgmt_pub.publish(water_msg)
+                self.get_logger().info(
+                f"Published thing_id: {thing_id} : water_msg: {water_msg}"
+                )
+
+            # Process energy consumption data
+            if 'energy' in features:
+                energy = features['energy'].get('properties', {})
+                energy_msg = EnergyConsumption()
+                energy_msg.total_consumption = float(energy.get('total', 0.0))
+                energy_msg.renewable_percentage = float(energy.get('renewable', 0.0))
+                energy_msg.grid_load = float(energy.get('grid_load', 0.0))
+                self.energy_consumption_pub.publish(energy_msg)
+                self.get_logger().info(
+                f"Published thing_id: {thing_id} : energy_msg: {energy_msg}"
+                )
+
+            # Process production line data
+            if 'production' in features:
+                prod = features['production'].get('properties', {})
+                prod_msg = ProductionLine()
+                prod_msg.line_id = thing_id
+                prod_msg.units_produced = int(prod.get('units', 0))
+                prod_msg.defect_count = int(prod.get('defects', 0))
+                prod_msg.overall_equipment_effectiveness = float(prod.get('oee', 0.0))
+                self.production_line_pub.publish(prod_msg)
+                self.get_logger().info(
+                f"Published thing_id: {thing_id} : prod_msg: {prod_msg}"
+                )
+
         except Exception as e:
             self.get_logger().error(f"Error processing thing: {str(e)}")
             if self.debug:

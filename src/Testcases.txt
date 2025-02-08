@@ -1,107 +1,227 @@
-# Test Case 1: GPS Data
+# Smart City - GPS Sensor:
 
-curl -X PUT 'http://localhost:8080/api/2/things/org.demo:gps_sensor_1' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
-  "features": {
+curl -X PUT 'http://localhost:8080/api/2/things/org.smartcity:gps_sensor1' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "attributes": {
     "location": {
-      "properties": {
-        "latitude": 37.7749,  
-        "longitude": -122.4194, 
-        "altitude": 100.5       
-      }
-    }
+      "latitude": 44.673856,
+      "longitude": 8.261719,
+      "elevation": 7
+    },
+    "asset_type": "gps_sensor"
   }
 }'
 
-# Test Case 2: Temperature Sensor Data
+# Smart City - Traffic Light:
 
-curl -X PUT 'http://localhost:8080/api/2/things/org.smartcity:energy_sensor_2' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+curl -X PUT 'http://localhost:8080/api/2/things/org.smartcity:traffic_light1' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "attributes": {
+    "location": {
+      "latitude": 44.674123,
+      "longitude": 8.262001,
+      "elevation": 5
+    },
+    "asset_type": "traffic_light"
+  },
   "features": {
+    "traffic_light_status": {
+      "properties": {
+        "current_state": "red",
+        "time_to_change": 30
+      }
+    },
+    "traffic": {
+      "properties": {
+        "count": 15,
+        "avg_speed": 12.5,
+        "congestion": 2
+      }
+    }
+  }
+}'  
+
+# Test Case 3: Smart Manufacturing - Production Line:
+
+curl -X PUT 'http://localhost:8080/api/2/things/com.manufacturing:production_line1' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "attributes": {
+    "location": {
+      "latitude": 45.465642,
+      "longitude": 9.186516,
+      "elevation": 120
+    },
+    "asset_type": "production_line"
+  },
+  "features": {
+    "status": {
+      "properties": {
+        "value": "operational",
+        "uptime": 3600,
+        "efficiency": 0.85
+      }
+    },
+    "production": {
+      "properties": {
+        "units": 1000,
+        "defects": 5,
+        "oee": 0.92
+      }
+    },
     "energy": {
       "properties": {
-        "consumption": 120.5
+        "consumption": 500.5,
+        "renewable": 0.3,
+        "grid_load": 350.35
       }
     }
   }
 }'
 
-# Test Case 3: Weather Station Data (Combined)
 
-curl -X PUT 'http://localhost:8080/api/2/things/org.demo:weather_station_3' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+# Test Case 4: Smart Agriculture - Crop Sensor:
+
+curl -X PUT 'http://localhost:8080/api/2/things/org.agriculture:crop_sensor99' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "attributes": {
+    "location": {
+      "latitude": 43.615234,
+      "longitude": -116.203691,
+      "elevation": 830
+    },
+    "asset_type": "crop_sensor"
+  },
   "features": {
+    "crop": {
+      "properties": {
+        "type": "wheat",
+        "moisture": 0.35,
+        "ph": 6.8,
+        "growth": 0.75
+      }
+    },
+    "environment": {
+      "properties": {
+        "aqi": 45,
+        "noise": 30,
+        "light": 5000,
+        "co2": 410
+      }
+    }
+  }
+}'
+
+# Test Case 5: Smart City - Water Management:
+
+curl -X PUT 'http://localhost:8080/api/2/things/org.smartcity:water_station11' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "attributes": {
+    "location": {
+      "latitude": 40.712776,
+      "longitude": -74.005974,
+      "elevation": 2
+    },
+    "asset_type": "water_station"
+  },
+  "features": {
+    "water": {
+      "properties": {
+        "level": 75.5,
+        "flow": 100.2,
+        "turbidity": 1.2,
+        "valve_open": true
+      }
+    },
+    "alerts": {
+      "properties": {
+        "last_alert": {
+          "type": "high_turbidity",
+          "severity": 2,
+          "timestamp": "2023-06-15T10:30:00Z"
+        }
+      }
+    }
+  }
+}'
+
+# 6. Smart Manufacturing - Machine with Sensors:
+curl -X PUT 'http://localhost:8080/api/2/things/com.manufacturing:machine1' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "attributes": {
+    "location": {
+      "latitude": 48.135125,
+      "longitude": 11.581981,
+      "elevation": 520
+    },
+    "asset_type": "cnc_machine"
+  },
+  "features": {
+    "status": {
+      "properties": {
+        "value": "operational",
+        "uptime": 7200,
+        "efficiency": 0.78
+      }
+    },
     "temperature": {
       "properties": {
-        "temperature": 15.7,
-        "humidity": 70.1
+        "value": 35.5
+      }
+    },
+    "imu": {
+      "properties": {
+        "accel_x": 0.01,
+        "accel_y": 0.02,
+        "accel_z": 9.81,
+        "gyro_x": 0.001,
+        "gyro_y": 0.002,
+        "gyro_z": 0.003
+      }
+    },
+    "energy": {
+      "properties": {
+        "total": 750.25,
+        "renewable": 96.5,
+        "grid_load":3000
+      }
+    },
+    "relationships": {
+      "properties": {
+        "part_of": {
+          "target": "com.manufacturing:production_line1"
+        }
+      }
+    }
+  }
+}'
+
+# 7. Smart City - Environmental Monitoring Station:
+curl -X PUT 'http://localhost:8080/api/2/things/org.smartcity:env_station1' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
+  "attributes": {
+    "location": {
+      "latitude": 51.507351,
+      "longitude": -0.127758,
+      "elevation": 35
+    },
+    "asset_type": "environmental_station"
+  },
+  "features": {
+    "environment": {
+      "properties": {
+        "aqi": 65,
+        "noise": 55,
+        "light": 12000,
+        "co2": 425
+      }
+    },
+    "temperature": {
+      "properties": {
+        "value": 22.5
+      }
+    },
+    "humidity": {
+      "properties": {
+        "value": 60
       }
     },
     "pressure": {
       "properties": {
-        "pressure": 1015.2  
-      }
-    },
-    "air_quality": {
-      "properties": {
-        "air_quality": 92.4    
-      }
-    },
-    "location": {
-      "properties": {
-        "latitude": 40.7128,    
-        "longitude": -74.0060   
+        "value": 1013.25
       }
     }
   }
 }'
-
-
-# Test Case 4: Smart Building Sensor Data
-
-curl -X PUT 'http://localhost:8080/api/2/things/org.demo:smart_building_4' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
-  "features": {
-    "light": {
-      "properties": {
-        "light_level": 750.3  
-      }
-    },
-    "co2": {
-      "properties": {
-        "co2_level": 550.9    
-      }
-    },
-    "tvoc": {
-      "properties": {
-        "tvoc_level": 300.2  
-      }
-    },
-    "motion": {
-      "properties": {
-        "motion_detected": true 
-      }
-    }
-  }
-}'
-
-# Test Case 5: Industrial Equipment Sensor
-
-curl -X PUT 'http://localhost:8080/api/2/things/org.demo:industrial_sensor_5' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
-  "features": {
-    "vibration": {
-      "properties": {
-        "noise_level": 80.1    
-      }
-    },
-    "power": {
-      "properties": {
-        "power_consumption": 1200.5 
-      }
-    },
-    "maintenance": {
-      "properties": {
-        "uptime": 172800,       
-        "wear_level": 95.7      
-      }
-    }
-  }
-}'
-
-# ... (Add more test cases as needed for other device types)

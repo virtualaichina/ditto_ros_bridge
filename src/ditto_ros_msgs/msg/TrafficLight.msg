@@ -1,0 +1,2 @@
+string current_state
+float64 time_to_change

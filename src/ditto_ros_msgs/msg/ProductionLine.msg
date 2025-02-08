@@ -1,0 +1,4 @@
+string line_id
+uint32 units_produced
+uint32 defect_count
+float64 overall_equipment_effectiveness

@@ -1,0 +1,3 @@
+float64 total_consumption
+float64 renewable_percentage
+float64 grid_load

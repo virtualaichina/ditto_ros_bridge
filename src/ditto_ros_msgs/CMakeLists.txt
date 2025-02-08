@@ -19,6 +19,17 @@ set(msg_files
   "msg/Alert.msg"
   "msg/Relationship.msg"
   "msg/MachineStatus.msg"
+  "msg/CropData.msg"
+  "msg/EnergyConsumption.msg"
+  "msg/EnvironmentalData.msg"
+  "msg/ProductionLine.msg"
+  "msg/TrafficData.msg"
+  "msg/WaterManagement.msg"
+  "msg/Temperature.msg"
+  "msg/Pressure.msg"
+  "msg/Humidity.msg"
+  "msg/Imu.msg"
+  "msg/TrafficLight.msg"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
