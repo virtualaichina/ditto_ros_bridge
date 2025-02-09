@@ -9,7 +9,7 @@ It implements the following features:
 3. Maps Ditto data to appropriate ROS messages and publishes them to specific topics.
 4. Implements error handling and reconnection logic for robustness.
 
-In order to run the bridge node, follow these steps:
+In order to run the bridge node and test it, follow these steps:
 
 1. Build (if you have updated /src):
 
@@ -25,68 +25,134 @@ ros2 launch ditto_ros_bridge bridge.launch.py
 
 or ros2 run ditto_ros_bridge bridge_node (if you want to run it without launch file)
 
-3. Monitor published ros messages (at various topics, e.g. /asset/metadata):
-open a new terminal, in the root directory (/ditto_ros_bridge) run: source install/setup.bash 
-then run: ros2 topic echo /asset/metadata (or any other topic)
+3. run simulation scripts:
+if you want to run simulation scripts, in this case, to simulate smart manufacturing conditions, open a new terminal, in the root directory (/ditto_ros_bridge) run: python3 smart_manufacturing_sim.py
 
-4. To Incure an update to a Thing in Ditto and see the ros message update, run the following command in a new terminal: (here we use testcase # 7. Smart City - Environmental Monitoring Station from src/Testcase.txt) 
-curl -X PUT 'http://localhost:8080/api/2/things/org.smartcity:env_station1' -u 'ditto:ditto' -H 'Content-Type: application/json' -d '{
-  "attributes": {
-    "location": {
-      "latitude": 51.507351,
-      "longitude": -0.127758,
-      "elevation": 35
-    },
-    "asset_type": "environmental_station"
-  },
-  "features": {
-    "environment": {
-      "properties": {
-        "aqi": 65,
-        "noise": 55,
-        "light": 12000,
-        "co2": 425
-      }
-    },
-    "temperature": {
-      "properties": {
-        "value": 22.5
-      }
-    },
-    "humidity": {
-      "properties": {
-        "value": 60
-      }
-    },
-    "pressure": {
-      "properties": {
-        "value": 1013.25
-      }
-    }
-  }
-}'
+4. at the terminal running bridge_node, you should see:
+...(here only shows some of the messages)
+[INFO] [1739004009.350295383] [ditto_ros_bridge]: Published thing_id: org.[INFO] [1739080324.321555362] [ditto_ros_bridge]: Published thing_id: com.manufacturing:machine3_5 : metadata_msg: ditto_ros_msgs.msg.AssetMetadata(asset_id='com.manufacturing:machine3_5', type='cnc_machine', location=geometry_msgs.msg.Point(x=11.582350879423382, y=48.135270142576104, z=519.7130443562527))
+[INFO] [1739080324.323817569] [ditto_ros_bridge]: Published thing_id: com.manufacturing:machine3_5 : temp_msg: ditto_ros_msgs.msg.Temperature(temperature=23.474869774473795)
+[INFO] [1739080324.325484053] [ditto_ros_bridge]: Published thing_id: com.manufacturing:machine3_5 : imu_msg: ditto_ros_msgs.msg.Imu(linear_acceleration_x=0.09747552870911608, linear_acceleration_y=0.04901120369560372, linear_acceleration_z=0.03339744457608393, angular_velocity_x=0.009616948791647732, angular_velocity_y=-0.007132033783625858, angular_velocity_z=-0.002492252976161449)
+[INFO] [1739080324.327222277] [ditto_ros_bridge]: Published thing_id: com.manufacturing:machine3_5 : rel_msg: ditto_ros_msgs.msg.Relationship(parent_thing_id='com.manufacturing:production_line3', child_thing_id='com.manufacturing:machine3_5', relationship_type='part_of')
+[INFO] [1739080324.329006052] [ditto_ros_bridge]: Published thing_id: com.manufacturing:machine3_5 : status_msg: ditto_ros_msgs.msg.MachineStatus(machine_id='com.manufacturing:machine3_5', status='operational', uptime=360.0, efficiency=0.8198388498479533)
+[INFO] [1739080324.331478017] [ditto_ros_bridge]: Published thing_id: com.manufacturing:machine3_5 : energy_msg: ditto_ros_msgs.msg.EnergyConsumption(total_consumption=68.4524091428118, renewable_percentage=19.678826991763856, grid_load=988.7401397613744)
+[INFO] [1739080324.335086930] [ditto_ros_bridge]: Published thing_id: com.manufacturing:machine3_5 : prod_msg: ditto_ros_msgs.msg.ProductionLine(line_id='com.manufacturing:machine3_5', units_produced=61, defect_count=0, overall_equipment_effectiveness=0.0)
+[INFO] [1739080324.395235794] [ditto_ros_bridge]: Published thing_id: com.manufacturing:production_line3 : status_msg: ditto_ros_msgs.msg.MachineStatus(machine_id='com.manufacturing:production_line3', status='operational', uptime=360.0, efficiency=0.9179404737087339)
+[INFO] [1739080324.398341521] [ditto_ros_bridge]: Published thing_id: com.manufacturing:production_line3 : prod_msg: ditto_ros_msgs.msg.ProductionLine(line_id='com.manufacturing:production_line3', units_produced=305, defect_count=1, overall_equipment_effectiveness=0.012750000000000001)
 
-5. at the terminal running bridge_node, you should see:
-[INFO] [1739004009.350295383] [ditto_ros_bridge]: Published thing_id: org.smartcity:env_station1 : point_msg: geometry_msgs.msg.Point(x=-0.127758, y=51.507351, z=35.0) : metadata_msg: ditto_ros_msgs.msg.AssetMetadata(asset_id='org.smartcity:env_station1', type='environmental_station', location=geometry_msgs.msg.Point(x=-0.127758, y=51.507351, z=35.0))
-[INFO] [1739004009.352072593] [ditto_ros_bridge]: Published thing_id: org.smartcity:env_station1 : temp_msg: ditto_ros_msgs.msg.Temperature(temperature=22.5)
-[INFO] [1739004009.355149814] [ditto_ros_bridge]: Published thing_id: org.smartcity:env_station1 : hum_msg: ditto_ros_msgs.msg.Humidity(humidity=60.0)
-[INFO] [1739004009.359061334] [ditto_ros_bridge]: Published thing_id: org.smartcity:env_station1 : pre_msg: ditto_ros_msgs.msg.Pressure(pressure=1013.25)
-[INFO] [1739004009.362472446] [ditto_ros_bridge]: Published thing_id: org.smartcity:env_station1 : env_msg: ditto_ros_msgs.msg.EnvironmentalData(air_quality_index=65.0, noise_level=55.0, light_intensity=12000.0, co2_level=425.0)
+6. open a new terminal and run the following command to list the topics:
 
-6. at the terminal running ros2 topic echo /asset/metadata, you should see the updated ros message:
-
-john@DESKTOP-0P475SS:~/ditto_ros_bridge$ ros2 topic echo /asset/metadata
-asset_id: org.smartcity:env_station1
-type: environmental_station
-location:
-  x: -0.127758
-  y: 51.507351
-  z: 35.0
-
-7. at the terminal running ros2 topic echo /sensor/pressure, you should see the updated ros message:
-
-john@DESKTOP-0P475SS:~/ditto_ros_bridge$ ros2 topic echo /sensor/pressure
-pressure: 1013.25
-
-similarly, you can check the other topics like /sensor/humidity, /sensor/temperature, /environment/data, /energy/consumption to see the updated ros messages.
-
+john@DESKTOP-0P475SS:~/ditto_ros_bridge$ ros2 topic list
+/com_manufacturing_machine1_1/energy
+/com_manufacturing_machine1_1/metadata
+/com_manufacturing_machine1_1/production
+/com_manufacturing_machine1_1/relationships
+/com_manufacturing_machine1_1/sensor/imu
+/com_manufacturing_machine1_1/sensor/temperature
+/com_manufacturing_machine1_1/status
+/com_manufacturing_machine1_2/energy
+/com_manufacturing_machine1_2/metadata
+/com_manufacturing_machine1_2/production
+/com_manufacturing_machine1_2/relationships
+/com_manufacturing_machine1_2/sensor/imu
+/com_manufacturing_machine1_2/sensor/temperature
+/com_manufacturing_machine1_2/status
+/com_manufacturing_machine1_3/energy
+/com_manufacturing_machine1_3/metadata
+/com_manufacturing_machine1_3/production
+/com_manufacturing_machine1_3/relationships
+/com_manufacturing_machine1_3/sensor/imu
+/com_manufacturing_machine1_3/sensor/temperature
+/com_manufacturing_machine1_3/status
+/com_manufacturing_machine1_4/energy
+/com_manufacturing_machine1_4/metadata
+/com_manufacturing_machine1_4/production
+/com_manufacturing_machine1_4/relationships
+/com_manufacturing_machine1_4/sensor/imu
+/com_manufacturing_machine1_4/sensor/temperature
+/com_manufacturing_machine1_4/status
+/com_manufacturing_machine1_5/energy
+/com_manufacturing_machine1_5/metadata
+/com_manufacturing_machine1_5/production
+/com_manufacturing_machine1_5/relationships
+/com_manufacturing_machine1_5/sensor/imu
+/com_manufacturing_machine1_5/sensor/temperature
+/com_manufacturing_machine1_5/status
+/com_manufacturing_machine2_1/energy
+/com_manufacturing_machine2_1/metadata
+/com_manufacturing_machine2_1/production
+/com_manufacturing_machine2_1/relationships
+/com_manufacturing_machine2_1/sensor/imu
+/com_manufacturing_machine2_1/sensor/temperature
+/com_manufacturing_machine2_1/status
+/com_manufacturing_machine2_2/energy
+/com_manufacturing_machine2_2/metadata
+/com_manufacturing_machine2_2/production
+/com_manufacturing_machine2_2/relationships
+/com_manufacturing_machine2_2/sensor/imu
+/com_manufacturing_machine2_2/sensor/temperature
+/com_manufacturing_machine2_2/status
+/com_manufacturing_machine2_3/energy
+/com_manufacturing_machine2_3/metadata
+/com_manufacturing_machine2_3/production
+/com_manufacturing_machine2_3/relationships
+/com_manufacturing_machine2_3/sensor/imu
+/com_manufacturing_machine2_3/sensor/temperature
+/com_manufacturing_machine2_3/status
+/com_manufacturing_machine2_4/energy
+/com_manufacturing_machine2_4/metadata
+/com_manufacturing_machine2_4/production
+/com_manufacturing_machine2_4/relationships
+/com_manufacturing_machine2_4/sensor/imu
+/com_manufacturing_machine2_4/sensor/temperature
+/com_manufacturing_machine2_4/status
+/com_manufacturing_machine2_5/energy
+/com_manufacturing_machine2_5/metadata
+/com_manufacturing_machine2_5/production
+/com_manufacturing_machine2_5/relationships
+/com_manufacturing_machine2_5/sensor/imu
+/com_manufacturing_machine2_5/sensor/temperature
+/com_manufacturing_machine2_5/status
+/com_manufacturing_machine3_1/energy
+/com_manufacturing_machine3_1/metadata
+/com_manufacturing_machine3_1/production
+/com_manufacturing_machine3_1/relationships
+/com_manufacturing_machine3_1/sensor/imu
+/com_manufacturing_machine3_1/sensor/temperature
+/com_manufacturing_machine3_1/status
+/com_manufacturing_machine3_2/energy
+/com_manufacturing_machine3_2/metadata
+/com_manufacturing_machine3_2/production
+/com_manufacturing_machine3_2/relationships
+/com_manufacturing_machine3_2/sensor/imu
+/com_manufacturing_machine3_2/sensor/temperature
+/com_manufacturing_machine3_2/status
+/com_manufacturing_machine3_3/energy
+/com_manufacturing_machine3_3/metadata
+/com_manufacturing_machine3_3/production
+/com_manufacturing_machine3_3/relationships
+/com_manufacturing_machine3_3/sensor/imu
+/com_manufacturing_machine3_3/sensor/temperature
+/com_manufacturing_machine3_3/status
+/com_manufacturing_machine3_4/energy
+/com_manufacturing_machine3_4/metadata
+/com_manufacturing_machine3_4/production
+/com_manufacturing_machine3_4/relationships
+/com_manufacturing_machine3_4/sensor/imu
+/com_manufacturing_machine3_4/sensor/temperature
+/com_manufacturing_machine3_4/status
+/com_manufacturing_machine3_5/energy
+/com_manufacturing_machine3_5/metadata
+/com_manufacturing_machine3_5/production
+/com_manufacturing_machine3_5/relationships
+/com_manufacturing_machine3_5/sensor/imu
+/com_manufacturing_machine3_5/sensor/temperature
+/com_manufacturing_machine3_5/status
+/com_manufacturing_production_line1/production
+/com_manufacturing_production_line1/status
+/com_manufacturing_production_line2/production
+/com_manufacturing_production_line2/status
+/com_manufacturing_production_line3/production
+/com_manufacturing_production_line3/status
+/parameter_events
+/rosout
