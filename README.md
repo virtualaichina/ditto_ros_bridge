@@ -14,7 +14,7 @@ In order to run the bridge node and test it, follow these steps:
 1. Build (if you have updated /src):
 
 in the root directory (/ditto_ros_bridge) run:
-colcon build --packages-select ditto_ros_msg (if you have updated /ditto_ros_msg)
+colcon build --packages-select ditto_ros_msgs (if you have updated /ditto_ros_msgs)
 
 colcon build --packages-select ditto_ros_bridge (if you have updated /ditto_ros_bridge)
 
