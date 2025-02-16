@@ -1,6 +1,6 @@
-This README outlines the steps required to build, launch, and test the ditto_ros_bridge node, which acts as a bridge between the Eclipse Ditto platform and ROS 2.  This bridge allows you to seamlessly integrate data from Ditto "things" into your ROS 2 applications.  The instructions cover building the necessary ROS 2 packages, launching the bridge node, monitoring the published ROS 2 messages, and verifying that changes in Ditto are reflected in the ROS 2 environment.  By following these steps, you will be able to establish a connection between Ditto and ROS 2, enabling real-time data exchange and facilitating the development of ROS 2 applications that interact with Ditto-managed devices and data.
+This repo outlines the steps required to build, launch, and test the ditto_ros_bridge node, which acts as a bridge between the Eclipse Ditto platform and ROS 2.  This bridge allows you to seamlessly integrate data from Ditto "things" into your ROS 2 applications.  The instructions cover building the necessary ROS 2 packages, launching the bridge node, monitoring the published ROS 2 messages, and verifying that changes in Ditto are reflected in the ROS 2 environment.  By following these steps, you will be able to establish a connection between Ditto and ROS 2, enabling real-time data exchange and facilitating the development of ROS 2 applications that interact with Ditto-managed devices and data.
 
-This bridge node subscribes to SSE events from Ditto and publishes them as ROS 2 messages. It listens to /things?namespaces={namespaces}&fields=thingId,attributes,features", where namespaces are "org.smartcity", "org.agriculture" and "com.manufacturing" in this setting.
+This bridge node subscribes to SSE events from Ditto and publishes them as ROS 2 messages. It listens to `/things?namespaces={namespaces}&fields=thingId,attributes,features`, where namespaces are `org.smartcity`, `org.agriculture` and `com.manufacturing` in this setting.
 
 It implements the following features:
 
@@ -14,19 +14,19 @@ In order to run the bridge node and test it, follow these steps:
 1. Build (if you have updated /src):
 
 in the root directory (/ditto_ros_bridge) run:
-colcon build --packages-select ditto_ros_msgs (if you have updated /ditto_ros_msgs)
+`colcon build --packages-select ditto_ros_msgs` (if you have updated /ditto_ros_msgs)
 
-colcon build --packages-select ditto_ros_bridge (if you have updated /ditto_ros_bridge)
+`colcon build --packages-select ditto_ros_bridge` (if you have updated /ditto_ros_bridge)
 
-source install/setup.bash
+`source install/setup.bash`
 
 2. launch bridge_node by:
-ros2 launch ditto_ros_bridge bridge.launch.py
+`ros2 launch ditto_ros_bridge bridge.launch.py`
 
-or ros2 run ditto_ros_bridge bridge_node (if you want to run it without launch file)
+or `ros2 run ditto_ros_bridge bridge_node` (if you want to run it without launch file)
 
 3. run simulation scripts:
-if you want to run simulation scripts, in this case, to simulate smart manufacturing conditions, open a new terminal, in the root directory (/ditto_ros_bridge) run: python3 smart_manufacturing_sim.py
+if you want to run simulation scripts, in this case, to simulate smart manufacturing conditions, open a new terminal, in the root directory (/ditto_ros_bridge) run: `python3 smart_manufacturing_sim.py`
 
 4. at the terminal running bridge_node, you should see:
 ...(here only shows some of the messages)
