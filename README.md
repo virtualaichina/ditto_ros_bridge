@@ -20,15 +20,17 @@ in the root directory (/ditto_ros_bridge) run:
 
 `source install/setup.bash`
 
-2. launch bridge_node by:
+2. install dependency aiohttp: (in Ubuntu) sudo apt install python3-aiohttp
+
+3. launch bridge_node by:
 `ros2 launch ditto_ros_bridge bridge.launch.py`
 
 or `ros2 run ditto_ros_bridge bridge_node` (if you want to run it without launch file)
 
-3. run simulation scripts:
+4. run simulation scripts:
 if you want to run simulation scripts, in this case, to simulate smart manufacturing conditions, open a new terminal, in the root directory (/ditto_ros_bridge) run: `python3 smart_manufacturing_sim.py`
 
-4. at the terminal running bridge_node, you should see:
+5. at the terminal running bridge_node, you should see:
 ...(here only shows some of the messages)
 [INFO] [1739004009.350295383] [ditto_ros_bridge]: Published thing_id: org.[INFO] [1739080324.321555362] [ditto_ros_bridge]: Published thing_id: com.manufacturing:machine3_5 : metadata_msg: ditto_ros_msgs.msg.AssetMetadata(asset_id='com.manufacturing:machine3_5', type='cnc_machine', location=geometry_msgs.msg.Point(x=11.582350879423382, y=48.135270142576104, z=519.7130443562527))
 [INFO] [1739080324.323817569] [ditto_ros_bridge]: Published thing_id: com.manufacturing:machine3_5 : temp_msg: ditto_ros_msgs.msg.Temperature(temperature=23.474869774473795)
